@@ -14,18 +14,27 @@ public class DigitReader {
 
 	public static void main(String[] args) {
 		
-		System.out.println("Enter your digit(s) seperated by SPACE(s)") ;
+		
 		
 		Scanner reader = new Scanner(System.in);
 		
 		
-		String badStringDigits = reader.nextLine();
+		String lastUserInput = "";
+		boolean keepGoing = true;
+		while(keepGoing) {
+			System.out.println("Enter your digit(s) seperated by SPACE(s)") ;
+		 lastUserInput = reader.nextLine();
 		
-		reader.close();
-		int[] numsArray = makeIntegerArray(badStringDigits);
+		 if (lastUserInput.toLowerCase().equals("goodbye")) {
+			 break;
+		 }
+		
+		int[] numsArray = makeIntegerArray(lastUserInput);
 		
 		printer(numsArray);
-		
+		}
+		reader.close();
+		System.out.println("Thank you for using this number reader, goodbye.");
 	}
 	/**
 	   *
