@@ -1,13 +1,18 @@
 package org.howard.edu.lsp.assignment5.implementation;
 
 import java.util.ArrayList;
-
+/**
+ * Class for IntegerSet objects, which are ArrayLists specifically for Integers
+ * @author tanneruzzell
+ *
+ */
 public class IntegerSet {
-	// Hint: probably best to use an array list. You will need to do a little
-	// research
+	
 	private ArrayList<Integer> set = new ArrayList<Integer>();
 
-	// Default Constructor
+	/**
+	 * Creates a new IntegerSet
+	 */
 	public IntegerSet() {
 
 	}
@@ -88,7 +93,6 @@ public class IntegerSet {
 
 	};
 
-// 
 	/**
 	 * Returns the smallest item in the set; Throws a IntegerSetException if the set
 	 * is empty
@@ -220,7 +224,11 @@ public class IntegerSet {
 			return false;
 		}
 	}
-
+	/**
+	 * Return this IntegerSet as a String
+	 * 
+	 * @return IntegerSet as String object
+	 */
 
 	public String toString() {
 		String returnValue = "";
@@ -229,5 +237,5 @@ public class IntegerSet {
 
 		}
 		return "[ " + returnValue + "]";
-	}; // return String representation of your set
+	}; 
 }
