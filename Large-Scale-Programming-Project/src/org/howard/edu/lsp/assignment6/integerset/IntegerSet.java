@@ -1,6 +1,7 @@
-package org.howard.edu.lsp.assignment5.implementation;
+package org.howard.edu.lsp.assignment6.integerset;
 
 import java.util.ArrayList;
+
 /**
  * Class for IntegerSet objects, which are ArrayLists specifically for Integers
  * @author tanneruzzell
@@ -42,8 +43,19 @@ public class IntegerSet {
 	 *         not
 	 */
 	public boolean equals(IntegerSet b) {
+		
+	
+		if(set.size() != b.length()) {
+			return false;
+		}
 		for (int i = 0; i < set.size(); i++) {
 			if (b.set.indexOf(set.get(i)) == -1) {
+				return false;
+
+			}
+		}
+		for (int p = 0; p < b.length(); p++) {
+			if (set.indexOf(b.set.get(p)) == -1) {
 				return false;
 
 			}
@@ -58,15 +70,18 @@ public class IntegerSet {
 	 * @param value is the integer the set will be checked for
 	 * @return boolean value true if the set contains desired value, and false
 	 *         otherwise
+	 * @throws IntegerSetException 
 	 */
 	public boolean contains(int value) {
-
+		
 		for (int i = 0; i < set.size() - 1; i++) {
 			if (value == set.get(i)) {
 				return true;
 			}
 		}
+		
 		return false;
+		
 	};
 
 	/**
@@ -78,16 +93,17 @@ public class IntegerSet {
 	 */
 
 	public int largest() throws IntegerSetException {
-		int max = set.get(0);
-		if (set.isEmpty()) {
+		int max = 0;
+		if (set.size() == 0) {
 			throw new IntegerSetException("Integer set is empty");
 		} else {
+			max = set.get(0);
 			for (int i = 0; i < set.size(); i++) {
 				if (set.get(i) > max) {
 					max = set.get(i);
 				}
 			}
-
+			
 		}
 		return max;
 
@@ -101,12 +117,13 @@ public class IntegerSet {
 	 * @throws IntegerSetException if the set is empty
 	 */
 	public int smallest() throws IntegerSetException {
-		int min = set.get(0);
+		int min = 0;
 
-		if (set.isEmpty()) {
+		if (set.isEmpty() || set.size() == 0) {
 			throw new IntegerSetException("Integer set is empty");
-
+			
 		} else {
+			min = set.get(0);
 			for (int i = 0; i < set.size(); i++) {
 				if (set.get(i) < min) {
 					min = set.get(i);
@@ -160,17 +177,17 @@ public class IntegerSet {
 	 * @param intSetb IntegerSet to be added to this IntegerSet
 	 */
 	public void union(IntegerSet intSetb) {
-			set.addAll(intSetb.set);
-		
-		for (int o = 0; o < set.size() - 1; o++) {
-			for (int p = o + 1; p < set.size(); p++) {
-				if (set.get(o) == set.get(p)) {
-					set.remove(p);
-				}
+		set.addAll(intSetb.set);
+	
+	for (int o = 0; o < set.size() - 1; o++) {
+		for (int p = o + 1; p < set.size(); p++) {
+			if (set.get(o) == set.get(p)) {
+				set.remove(p);
 			}
 		}
-		
 	}
+	
+}
 
 	/**
 	 * intersect function compares all values in this IntegerSet with the values in

@@ -23,7 +23,7 @@ public class Driver {
 		set1.add(2);
 		set1.add(3);
 		System.out.println("Value of Set1 is: " + set1.toString());
-
+		
 		// Checking if clear empties the set and is empty function
 		set1.clear();
 		System.out.println("Value of Set1 is: " + set1.toString());
