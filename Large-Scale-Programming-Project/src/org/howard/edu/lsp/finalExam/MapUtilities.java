@@ -14,8 +14,8 @@ public class MapUtilities {
 	 * Method commonKeyValuePair returns the number of common key value pairs shared
 	 * between two HashMaps
 	 * 
-	 * @param map1 HashMap<String, String>
-	 * @param map2 HashMap<String, String>
+	 * @param map1 String by String HashMap
+	 * @param map2 String by String HashMap
 	 * @return integer representing the number of common key value pairs. Will
 	 *         always return 0 of one or more HashMaps are empty
 	 * @throws NullMapException if on or more HashMaps are null
