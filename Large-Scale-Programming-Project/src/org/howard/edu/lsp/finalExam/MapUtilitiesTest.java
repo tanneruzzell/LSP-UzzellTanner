@@ -11,13 +11,15 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /**
+ * Class for testing MapUtilities.java
+ * 
  * @author tanneruzzell
  *
  */
 class MapUtilitiesTest {
 
 	@Test
-	@DisplayName("Testing .commonKeyValuePairs() when there are common key value pairs")
+	@DisplayName("Testing MapUtilities.commonKeyValuePairs() when there are common key value pairs")
 	void testCommonKeyValuePairs_withTwoCommonKeyValuePairs() {
 		HashMap<String,String> hashMap1 = new HashMap<String, String>();
 		hashMap1.put("Alice", "Healthy");
@@ -45,7 +47,7 @@ class MapUtilitiesTest {
 		
 	}
 	@Test
-	@DisplayName("Testing .commonKeyValuePairs when one or more HashMap parameter is empty")
+	@DisplayName("Testing MapUtilities.commonKeyValuePairs() when one or more HashMap parameter is empty")
 	void testCommonKeyValuePairs_WhenHashmapIsEmpty() {
 		HashMap<String,String> hashMap1 = new HashMap<String, String>();
 		hashMap1.put("Alice", "Healthy");
@@ -68,7 +70,7 @@ class MapUtilitiesTest {
 		
 	}
 	@Test
-	@DisplayName("Testing .commonKeyValuePairs throws NullMapException when one or more HashMap parameter is null")
+	@DisplayName("Testing MapUtilities.commonKeyValuePairs() throws NullMapException when one or more HashMap parameter is null")
 	void testCommonKeyValuePairs_throwsNullMapException() {
 		HashMap<String,String> hashMap1 = null;
 		
